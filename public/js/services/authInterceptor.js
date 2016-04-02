@@ -1,4 +1,4 @@
-angular.module('WDI_Final_Project')
+angular.module('final_project')
   .factory('AuthInterceptor', AuthInterceptor);
 
 AuthInterceptor.$inject = ['API', 'tokenService'];

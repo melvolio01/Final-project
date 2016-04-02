@@ -1,0 +1,22 @@
+{
+  "name": "final_project",
+  "description": "** Final Project - planning notes **",
+  "main": "app.js",
+  "authors": [
+    "andy hunt <andyhunt200@hotmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/melvolio01/Final-project",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-resource": "^1.5.2",
+    "angular-jwt": "^0.0.9"
+  }
+}

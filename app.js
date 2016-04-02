@@ -1,15 +1,15 @@
 // backend app.js
 // set up express API
-
-var express     = require('express');
-var app         = express();
-var morgan      = require('morgan');
-var port        = process.env.PORT || 3000;
-var mongoose    = require('mongoose');
-var bodyParser  = require('body-parser');
-var cors        = require('cors');
-var router      = require('./config.routes');
-var db          = require('./config/database');
+var express        = require('express');
+var app            = express();
+var expressLayouts = require('express-ejs-layouts');
+var morgan         = require('morgan');
+var port           = process.env.PORT || 3000;
+var mongoose       = require('mongoose');
+var bodyParser     = require('body-parser');
+var cors           = require('cors');
+var router         = require('./config.routes');
+var db             = require('./config/database');
 
 mongoose.connect(db.uri);
 

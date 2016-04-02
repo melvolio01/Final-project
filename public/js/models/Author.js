@@ -1,5 +1,5 @@
 angular
-  .module('WDI_Final_Project')
+  .module('final_project')
   .factory('Author', Author);
 
 Author.$inject = ['$resource', 'API'];

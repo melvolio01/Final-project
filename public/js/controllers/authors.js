@@ -1,5 +1,5 @@
 angular
-  .module('WDI_Final_Project')
+  .module('final_project')
   .controller('authorsController', AuthorsController)
 
 AuthorsController.$inject = ['Author', 'tokenService'];
