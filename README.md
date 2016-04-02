@@ -127,4 +127,4 @@
 	Comments
 	text/content,
 	Belongs to one author,
-	Belongs to one story (and to another author through the story)
+	Belongs to one story (and to another author through the story)# Final-project
