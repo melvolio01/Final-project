@@ -11,10 +11,10 @@ function secureRoute(req, res, next){
 
   var token = req.headers.authorization.replace('Bearer ', '');
 
-  jwt.verify(token, secret, function(err, user){
-    if(!user) return res.status(401).json({
+  jwt.verify(token, secret, function(err, author){
+    if(!author) return res.status(401).json({
       message: 'Invalid token'});
-      req.user = user;
+      req.author = author;
       next();
   });
 }
@@ -30,5 +30,9 @@ router.route('/authors/:id')
 
 router.post('/register', authenticationController.register);
 router.post('/login', authenticationController.login);
+
+router.get('/', function(req, res) {
+  res.render('index');
+});
 
 module.exports = router;

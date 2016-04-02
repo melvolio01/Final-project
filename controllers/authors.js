@@ -10,12 +10,12 @@ function authorsIndex(req, res){
 function authorsShow(req, res){
   Author.findById(req.params.id, function(err, author){
     if(err) return res.status(500).json({ message: err });
-    return res.status(200).json(user);
+    return res.status(200).json(author);
   });
 }
 
 function authorsUpdate(req, res){
-  Author.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, user){
+  Author.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, author){
     if(err) return res.status(500).json({ message: err});
     return res.status(200).json(author);
   });

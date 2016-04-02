@@ -7,7 +7,7 @@ function AuthorsController(Author, tokenService) {
   var self = this;
 
   self.all = [];
-  self.currentUser = tokenService.getUser();
+  self.currentAuthor = tokenService.getAuthor();
 
   function handleLogin(res){
     var token = res.token ? res.token : null;

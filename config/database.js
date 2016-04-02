@@ -1,3 +1,3 @@
 module.exports = {
-  uri: 'mongodb://localhost/WDI_Final_Project'
+  uri: 'mongodb://localhost/final_project'
 }
