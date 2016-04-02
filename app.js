@@ -8,7 +8,7 @@ var port           = process.env.PORT || 3000;
 var mongoose       = require('mongoose');
 var bodyParser     = require('body-parser');
 var cors           = require('cors');
-var router         = require('./config.routes');
+var router         = require('./config/routes');
 var db             = require('./config/database');
 
 mongoose.connect(db.uri);

@@ -1,9 +1,9 @@
 var router = require('express').Router();
 var jwt = require('jsonwebtoken');
 var authenticationController = require('../controllers/authentication');
-var authorController = require('../controllers/authors');
-var commentController = require('../controllers/comments');
-var storyController = require('../controllers/stories');
+var authorsController = require('../controllers/authors');
+var commentsController = require('../controllers/comments');
+var storiesController = require('../controllers/stories');
 var secret = require('../config/tokens').secret;
 
 function secureRoute(req, res, next){
@@ -12,7 +12,7 @@ function secureRoute(req, res, next){
   var token = req.headers.authorization.replace('Bearer ', '');
 
   jwt.verify(token, secret, function(err, user){
-    if(!user) return res.status(401)json({
+    if(!user) return res.status(401).json({
       message: 'Invalid token'});
       req.user = user;
       next();

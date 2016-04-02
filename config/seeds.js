@@ -13,7 +13,7 @@ Author.create([{
   passwordConfirmation: "password"
 },{
   username: "Author2",
-  email: "author2@ga.co"
+  email: "author2@ga.co",
   password: "password",
   passwordConfirmation: "password"
 }], function(err, authors){
