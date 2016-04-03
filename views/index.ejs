@@ -12,6 +12,8 @@
   <script src="/js/app.js"></script>
   <script src="/js/models/Author.js"></script>
   <script src="/js/controllers/authors.js"></script>
+  <script src="/js/controllers/stories.js"></script>
+  <script src="/js/controllers/comments.js"></script>
   <script src="/js/services/token.js"></script>
   <script src="/js/services/authInterceptor.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -27,14 +29,14 @@
     </nav>
   </header>
 
-  <main>
+  <main ui-view class="container">
     <section>
       <div class="message">
         {{ authors.message }}
       </div>
 
       <div>
-        <h3>{{ authors.currentAuthor.username }}</h3>
+        <h3> {{ authors.currentAuthor.username }}</h3>
       </div>
     </section>  
 

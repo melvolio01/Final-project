@@ -20,6 +20,16 @@ function Router($stateProvider, $urlRouterProvider){
     templateUrl: 'home.html'
   })
 
+  .state('register', {
+    url: '/register',
+    templateUrl: 'register.html'
+  })
+
+  .state('login', {
+    url: '/login', 
+    templateUrl: 'login.html'
+  })
+
   .state('about', {
     url: '/about',
     templateUrl: 'about.html'
