@@ -33,6 +33,11 @@ function Router($stateProvider, $urlRouterProvider){
   .state('about', {
     url: '/about',
     templateUrl: 'about.html'
+  })
+
+  .state('authorprofile', {
+    url: '/authorprofile',
+    templateUrl: 'authorprofile.html'
   });
 
   $urlRouterProvider.otherwise('/');

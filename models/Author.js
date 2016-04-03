@@ -6,6 +6,10 @@ var authorSchema = mongoose.Schema({
   email: {type: String, unique: true, required: true},
   passwordHash: {type: String, required: true},
   // other bits needed for author model here
+  avatar: String,
+  bio: String,
+  stories: [{ type: mongoose.Schema.ObjectId, ref: 'Story'}],
+  comments: [{ type: mongoose.Schema.ObjectId, ref: 'Comment'}]
 });
 
 authorSchema.set('toJSON', {
