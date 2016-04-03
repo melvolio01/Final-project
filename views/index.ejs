@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="final_project">
 <head>
-  <title>Final project - Hello world!</title>
+  <title>Flash fiction</title>
 
   <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
   <script src="/vendor/angular/angular.min.js"></script>
@@ -21,11 +21,13 @@
 </head>
 <body ng-app="final_project" ng-controller="authorsController as authors">
   <header>
-    <h1>Final project</h1>
+    <h1>Flash fiction</h1>
     <nav class="tabs">
-      <a ui-sref-active="#login">Log in</a>
-      <a ui-sref-active="#register">Register</a></li>
-      <a ui-sref-active="authors.logout()">Log Out</a>
+      <a href="#login">Log in</a>
+      <a href="#register">Register</a>
+      <a ui-sref-active="active" ui-sref="home">Home</a>
+      <a ui-sref-active="active" ui-sref="authorprofile">Author Profile</a>
+      <a ng-click="authors.logout()">Log Out</a>
     </nav>
   </header>
 
