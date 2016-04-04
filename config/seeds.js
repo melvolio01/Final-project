@@ -64,7 +64,8 @@ Author.create([{
   },{
   username: "Author2",
   email: "author2@ga.co",
-  avatar: "http://www.celebitchy.com/89806/jd_salinger_famous_recluse_author_dies_at_age_91/",
+  bio: "Bumbling along",
+  avatar: "http://www.thirteen.org/13pressroom/files/2013/11/11.jpg",
   password: "password",
   passwordConfirmation: "password",
   stories: [stories[2]._id, stories[3]._id]

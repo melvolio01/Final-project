@@ -1,4 +1,13 @@
 <h2>Welcome back {{ authors.currentAuthor.username }}</h2>
+<h4>{{authors.currentAuthor.bio}}</h4>
+
+
+<section>
+    <div class="container col-md-4">
+      <div class="card">
+      <img class="avatar-frame" ng-src="{{ authors.currentAuthor.avatar }}" alt="Card image cap">
+        <div class="card-block">
+              </div>
 
 <nav class="tabs">
 <a ui-sref-active="active" ui-sref="storyNew">New Story</a>
@@ -6,7 +15,6 @@
 
  </nav>
 
-<section>
   <div class="message">
     {{ authors.message }}
   </div>

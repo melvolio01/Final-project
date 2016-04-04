@@ -21,3 +21,13 @@ body{
   background-color: white;
   border: 1px solid black;
 }
+
+ul{
+  list-style-type: none;
+  }
+
+.avatar-frame {border: 2px solid #c7b89e;
+        width: 125px;
+        height: 125px;
+        border-radius: 50%;
+  }

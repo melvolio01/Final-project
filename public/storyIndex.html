@@ -6,7 +6,7 @@
   </div>
 
   <ul>
-    <li class="myStories" ng-repeat="story in authors.currentAuthor.stories">{{ story.title + ', ' +  story.genre }}<a ui-sref-active="active" ui-sref="storyShow">View Story</a>
+    <li class="myStories" ng-repeat="story in authors">{{ story.title }}<a ui-sref-active="active" ui-sref="storyShow">View Story</a>
     </li>
   </ul>
 </section>
