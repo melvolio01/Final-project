@@ -27,7 +27,6 @@
     <nav class="tabs">
       <a ng-if="!authors.isLoggedIn()" href="#login">Log in</a>
       <a ng-if="!authors.isLoggedIn()" href="#register">Register</a>
-      <a ui-sref-active="active" ui-sref="home">Home</a>
       <a ng-if="authors.isLoggedIn()" ui-sref-active="active" ui-sref="authorprofile">My Profile</a>
       <a ng-if="authors.isLoggedIn()" ng-click="authors.logout()">Log Out</a>
     </nav>

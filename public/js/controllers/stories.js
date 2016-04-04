@@ -31,27 +31,28 @@ function StoriesController($window, $scope) {
   }
 }
 
-
-// function timer()
-// {
-//   timeLeft=timeLeft-1;
-//   if (timeLeft <= 0)
-//   {
-//     clearInterval(time);
-//     $('#playerScore').text("Computer wins! You scored " + playerScore + " points");
-//     $('.timer').text("Time up!");  
-//      return;
-//   }
-   
-
-//   else if (playerScore == 4) {
-//     $('#playerScore').text("Well done, you solved the wall!");
-//     $('.timer').text("Player Wins!");
-//     return;
-//   }
-
-//   else {
-//      $('.timer').text("Time left: " + timeLeft);
-//      return;
-//   }
-
+function countdown(element, minutes, seconds) {
+    // set time for the particular countdown
+    var time = minutes*60 + seconds;
+    var interval = setInterval(function() {
+        var el = document.getElementById(element);
+        
+        if (time <= 0) {
+            var text = "Story updated";
+            el.innerHTML = text;
+            setTimeout(function() {
+                countdown('clock', 5, 0);
+            }, 2000);
+            clearInterval(interval);
+            return;
+        }
+        var minutes = Math.floor( time / 60 );
+        if (minutes < 10) minutes = "0" + minutes;
+        var seconds = time % 60;
+        if (seconds < 10) seconds = "0" + seconds; 
+        var text = minutes + ':' + seconds;
+        el.innerHTML = text;
+        time--;
+    }, 1000);
+}
+countdown('clock', 5, 0);

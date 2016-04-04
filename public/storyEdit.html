@@ -1,4 +1,4 @@
-<h1>Edit stories</h1>
+<h1>Edit story</h1>
 
 <textarea id="storyWrite" ng-show="story in authors.currentAuthor.stories"  
   ng-model="string"
@@ -10,9 +10,8 @@
   [ng-pattern="string"]
   [ng-change="string"]
   [ng-trim="boolean"]>
-  {{ story.title + </br> +  story.content }}
+  
 </textarea>
 
-<div id="timer">Next update: 5:00</div>
+<div>Next update:<div id="clock"></div></div>
 
-<a ng-if="authors.isLoggedIn()" ui-sref-active="active" ui-sref="authorprofile">My Profile</a>

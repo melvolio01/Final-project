@@ -43,7 +43,7 @@ function Router($stateProvider, $urlRouterProvider){
     templateUrl: 'storyEdit.html'
   })
   .state('storyShow', {
-    url: '/story/:Id', 
+    url: '/story/show/:Id', 
     templateUrl: 'storyShow.html'
   })
   .state('storyIndex', {
