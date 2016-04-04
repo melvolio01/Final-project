@@ -12,7 +12,7 @@ function register(req, res){
       return res.status(400).json({ message: err.toString() });
     }
 
-    var payload = { _id: author._id, authorname: author.authorname };
+    var payload = { _id: author._id, username: author.username };
     var token = jwt.sign(payload, secret, "6h");
     return res.status(200).json({
       message: "Thanks for registering", author: author, token: token 

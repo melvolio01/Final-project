@@ -30,3 +30,28 @@ function StoriesController($window, $scope) {
     self.message = null;
   }
 }
+
+
+// function timer()
+// {
+//   timeLeft=timeLeft-1;
+//   if (timeLeft <= 0)
+//   {
+//     clearInterval(time);
+//     $('#playerScore').text("Computer wins! You scored " + playerScore + " points");
+//     $('.timer').text("Time up!");  
+//      return;
+//   }
+   
+
+//   else if (playerScore == 4) {
+//     $('#playerScore').text("Well done, you solved the wall!");
+//     $('.timer').text("Player Wins!");
+//     return;
+//   }
+
+//   else {
+//      $('.timer').text("Time left: " + timeLeft);
+//      return;
+//   }
+

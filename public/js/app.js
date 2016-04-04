@@ -31,7 +31,7 @@ function Router($stateProvider, $urlRouterProvider){
     templateUrl: 'about.html'
   })
   .state('authorprofile', {
-    url: '/authorprofile',
+    url: '/author/:authorId',
     templateUrl: 'authorprofile.html'
   })
   .state('storyNew', {
@@ -39,11 +39,11 @@ function Router($stateProvider, $urlRouterProvider){
     templateUrl: 'storyNew.html'
   })
   .state('storyEdit', {
-    url: '/storyEdit', 
+    url: '/story/:Id', 
     templateUrl: 'storyEdit.html'
   })
   .state('storyShow', {
-    url: '/storyShow', 
+    url: '/story/:Id', 
     templateUrl: 'storyShow.html'
   })
   .state('storyIndex', {

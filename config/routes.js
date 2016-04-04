@@ -19,6 +19,15 @@ function secureRoute(req, res, next){
   });
 }
 
+router.route('/stories')
+  .get(secureRoute, storiesController.index);
+
+router.route('/stories/:id')
+  .all(secureRoute)
+  .get(storiesController.show)
+  .put(storiesController.update)
+  .delete(storiesController.delete);
+
 router.route('/authors')
   .get(secureRoute, authorsController.index);
 

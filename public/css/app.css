@@ -14,3 +14,10 @@ body{
   width: 70vh;
   margin-left: 10px;
 }
+
+.myStories{
+  height: 40px;
+  width: 70vw;
+  background-color: white;
+  border: 1px solid black;
+}

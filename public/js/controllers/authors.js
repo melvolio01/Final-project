@@ -14,7 +14,7 @@ function AuthorsController(Author, tokenService, $state) {
 
     if(token) {
       self.getAuthors();
-      self.currentAuthor = tokenService.getAuthor();
+      self.currentAuthor = Author.get({ id: tokenService.getAuthor()._id });
       $state.go('authorprofile');
     }
 
@@ -46,6 +46,7 @@ function AuthorsController(Author, tokenService, $state) {
 
   if(self.isLoggedIn()) {
     self.getAuthors();
+    self.currentAuthor = Author.get({ id: tokenService.getAuthor()._id });
     return self;
   }
 

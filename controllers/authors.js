@@ -8,7 +8,7 @@ function authorsIndex(req, res){
 }
 
 function authorsShow(req, res){
-  Author.findById(req.params.id, function(err, author){
+  Author.findById(req.params.id).populate('stories').exec(function(err, author){
     if(err) return res.status(500).json({ message: err });
     return res.status(200).json(author);
   });

@@ -2,8 +2,7 @@
 
 <nav class="tabs">
 <a ui-sref-active="active" ui-sref="storyNew">New Story</a>
-<a ui-sref-active="active" ui-sref="storyEdit">Edit Story</a>
-<a ui-sref-active="active" ui-sref="storyIndex">All Stories</a>
+<a ui-sref-active="active" ui-sref="storyIndex">Browse Stories</a>
 
  </nav>
 
@@ -12,4 +11,8 @@
     {{ authors.message }}
   </div>
 
-</section>  
+  <ul>
+    <li class="myStories" ng-repeat="story in authors.currentAuthor.stories">{{ story.title + ', ' +  story.genre }}<a ui-sref-active="active" ui-sref="storyEdit">Edit Story</a>
+</li>
+  </ul>
+</section>
