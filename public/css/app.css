@@ -2,3 +2,15 @@ body{
   background-color: silver;
   font-family: 'Roboto', sans-serif;
 }
+
+#storyRead{
+  height: 70vh;
+  width: 50vw;
+  margin-left: 10px;
+}
+
+#storyWrite{
+  height: 70vh;
+  width: 70vh;
+  margin-left: 10px;
+}

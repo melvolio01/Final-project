@@ -2,8 +2,8 @@ angular
   .module('final_project')
   .controller('authorsController', AuthorsController)
 
-AuthorsController.$inject = ['Author', 'tokenService'];
-function AuthorsController(Author, tokenService) {
+AuthorsController.$inject = ['Author', 'tokenService', '$state'];
+function AuthorsController(Author, tokenService, $state) {
   var self = this;
 
   self.all = [];
@@ -13,10 +13,9 @@ function AuthorsController(Author, tokenService) {
     var token = res.token ? res.token : null;
 
     if(token) {
-      console.log(res);
       self.getAuthors();
-      self.currentAuthor = 
-        tokenService.getAuthor();
+      self.currentAuthor = tokenService.getAuthor();
+      $state.go('authorprofile');
     }
 
     self.message = res.message;
@@ -45,8 +44,8 @@ function AuthorsController(Author, tokenService) {
     return !! tokenService.getToken();
   }
 
-  if(self.isLoggedIn()) { self.getAuthors();
-
+  if(self.isLoggedIn()) {
+    self.getAuthors();
     return self;
   }
 

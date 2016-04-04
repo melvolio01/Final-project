@@ -1,1 +1,15 @@
-<h2>This will be the Authors profile</h2>
+<h2>Welcome back {{ authors.currentAuthor.username }}</h2>
+
+<nav class="tabs">
+<a ui-sref-active="active" ui-sref="storyNew">New Story</a>
+<a ui-sref-active="active" ui-sref="storyEdit">Edit Story</a>
+<a ui-sref-active="active" ui-sref="storyIndex">All Stories</a>
+
+ </nav>
+
+<section>
+  <div class="message">
+    {{ authors.message }}
+  </div>
+
+</section>  
