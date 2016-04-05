@@ -23,9 +23,14 @@
 </head>
 <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
+<div class="modalContainer" 
+  ng-style="{'background-image':'url(https://www.google.com/images/srpr/logo4w.png)'}"></div>
+
+
 <body ng-app="final_project" ng-controller="authorsController as authors">
   <header>
     <h1>Flash fiction</h1>
+
     <nav class="tabs">
       <a ng-if="!authors.isLoggedIn()" href="#login">Log in</a>
       <a ng-if="!authors.isLoggedIn()" href="#register">Register</a>

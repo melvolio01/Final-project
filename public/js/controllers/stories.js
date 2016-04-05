@@ -1,8 +1,8 @@
 angular.module('final_project')
   .controller('StoriesController', StoriesController);
 
-StoriesController.$inject = ['$window', '$scope', '$state', 'Story', '$interval', '$rootScope','tokenService'];
-function StoriesController($window, $scope, $state, Story, $interval, $rootScope, tokenService) {
+StoriesController.$inject = ['$window', '$scope', '$state', 'Story', 'Comment', '$interval', '$rootScope','tokenService', 'Author'];
+function StoriesController($window, $scope, $state, Story, Comment, $interval, $rootScope, tokenService, Author) {
 
   // var socket = $window.io();
 
@@ -14,12 +14,25 @@ function StoriesController($window, $scope, $state, Story, $interval, $rootScope
   self.hasSetUsername = false;
 
   self.currentStory = {};
+  self.newStory = {};
 
   self.all = Story.query();
 
   self.setUsername = function(){
-    if(self.username.length > 2)
-      self.hasSetUsername = true;
+    if(self.username.length > 2) self.hasSetUsername = true;
+  }
+
+  self.deleteCurrentStory = function() {
+
+  }
+
+  self.addComment = function() {
+    this.newComment.story = this.currentStory._id;
+    Comment.save(this.newComment, function(res) {
+      $scope.$applyAsync(function() {
+        self.currentStory.comments.push(res.comment);
+      });
+    });
   }
 
   self.timer;
@@ -38,18 +51,26 @@ function StoriesController($window, $scope, $state, Story, $interval, $rootScope
 
   self.addStory = function() {
     var authorId = tokenService.getAuthor()._id;
-    console.log(authorId);
+
     var data = {
       story: self.currentStory,
       authorId: authorId
     }
+
     Story.save(data, function(story) {
-      $scope.stories.push(story);
-      console.log("saving: " + story);
-      $state.go('authorprofile');
-      // Get stories auto-adding here!
+      self.newStory = story;
+      self.all.push(story);
+      self.currentAuthor = Author.get({ id: tokenService.getAuthor()._id });
+      console.log(self.currentAuthor.$promise);
+      self.currentAuthor.$promise.then(function(user) {
+        user.stories.push(story);
+        console.log("saving: " + story);
+        $state.go('storyIndex');
+      });
     })
   }
+
+
 
 
   $rootScope.$on('$stateChangeStart', function() {

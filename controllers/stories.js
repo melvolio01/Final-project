@@ -23,7 +23,7 @@ function storiesCreate(req, res){
 }
 
 function storiesShow(req, res){
-  Story.findById(req.params.id, function(err, Story){
+  Story.findById(req.params.id).populate('comments').exec(function(err, Story){
     if(err) return res.status(500).json({ message: err });
     return res.status(200).json(Story);
   });

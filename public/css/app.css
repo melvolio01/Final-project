@@ -1,5 +1,5 @@
 body{
-  background-color: #cdc9c9;
+  background-color: #e0e0e0;
   color: #4D1D0D;
   font-family: 'Roboto', sans-serif;
 }
@@ -7,20 +7,34 @@ body{
 #storyRead{
   height: 70vh;
   width: 50vw;
+  border: 1px solid #c7b89e;
+}
+
+#storyShow{
+  width: 45vw;
 }
 
 #storyWrite{
   height: 70vh;
   width: 70vh;
+  border: 1px solid #c7b89e;
 }
 #storyTitle{
-  height: 30px;
+  min-height: 20px;
   width: 35vw;
+  border: 1px solid #c7b89e;
 }
 
 #commentBar{
-  height: 30px;
-  width: 30vw;
+  min-height: 30px;
+  width: 45vw;
+  margin-bottom: 2px;
+  margin-left: 0px;
+  background-color: white;
+  border: 1px solid #c7b89e;
+  text-align: left;
+  -webkit-padding-start: 0;
+
 }
 
 /*#storyEdit{
@@ -30,14 +44,15 @@ body{
 #commentWrite{
   height: 30px;
   width: 70vw;
+  border: 1px solid #c7b89e;
 }
 
 .message-panel{
   width: 20vw}
 
 .myStories{
-  height: 40px;
-  width: 70vw;
+  min-height: 40px;
+  width: 50vw;
   background-color: white;
   border: 1px solid #c7b89e;
 }

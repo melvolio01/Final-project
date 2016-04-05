@@ -1,26 +1,26 @@
 <h2>Welcome back {{ authors.currentAuthor.username }}</h2>
 <h4>{{authors.currentAuthor.bio}}</h4>
 
-
 <section>
-    <div class="container col-md-4">
-      <div class="card">
+  <div class="container col-md-4">
+    <div class="card">
       <img class="avatar-frame" ng-src="{{ authors.currentAuthor.avatar }}" alt="Card image cap">
-        <div class="card-block">
-              </div>
+    </div>
 
-<nav class="tabs">
-<a ui-sref-active="active" ui-sref="storyNew">New Story</a>
-<a ui-sref-active="active" ui-sref="storyIndex">Browse Stories</a>
+    <nav class="tabs">
+      <a ui-sref-active="active" ui-sref="storyNew">New Story</a>
+      <a ui-sref-active="active" ui-sref="storyIndex">Browse Stories</a>
+    </nav>
 
- </nav>
+    <div class="message">
+      {{ authors.message }}
+    </div>
 
-  <div class="message">
-    {{ authors.message }}
+    <ul id="userStories">
+      <li class="myStories" ng-repeat="story in authors.currentAuthor.stories">
+        Title: {{ story.title }}<br>
+        Genre: {{ story.genre }}<a ui-sref-active="active" ui-sref="storyEdit({ id: story._id })" id="{{ story._id }}">Edit Story</a>
+      </li>
+    </ul>
   </div>
-
-  <ul>
-    <li class="myStories" ng-repeat="story in authors.currentAuthor.stories">Title: {{ story.title }}   <br>  Genre: {{ story.genre }}<a ui-sref-active="active" ui-sref="storyEdit({ id: story._id })" id="{{ story._id }}">Edit Story</a>
-</li>
-  </ul>
 </section>

@@ -2,12 +2,11 @@
   <h2>New story</h2>
 
   <form name="stories.newStory" ng-submit="stories.addStory()">
-    <textarea id="storyTitle" ng-model="stories.currentStory.title"></textarea><br>
-    <textarea id="storyWrite" ng-model="stories.currentStory.content"></textarea>
-    <input type="submit" value="Add">
+    <textarea id="storyTitle" placeholder="title" ng-model="stories.currentStory.title"></textarea><br>
+    <textarea id="storyWrite" placeholder="content" ng-model="stories.currentStory.content"></textarea>
+    <br>
+    <input type="submit" value="Add First Draft">
   </form>
 
-  <br>
-  <a ng-if="authors.isLoggedIn()" ui-sref-active="active" ui-sref="authorprofile">My Profile</a>
 </section>
 
