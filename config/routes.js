@@ -20,11 +20,17 @@ function secureRoute(req, res, next){
 }
 
 router.route('/stories')
-  .get(secureRoute, storiesController.index);
+  .get(storiesController.index);
 
 router.route('/stories/:id')
-  .all(secureRoute)
+  // .all(secureRoute)
   .get(storiesController.show)
+  .put(secureRoute, storiesController.update)
+  .delete(secureRoute, storiesController.delete);
+
+router.route('/comments')
+  .all(secureRoute)
+  .get(commentsController.show)
   .put(storiesController.update)
   .delete(storiesController.delete);
 

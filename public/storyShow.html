@@ -7,18 +7,12 @@
 </section>
 
 
+<section ng-if="authors.isLoggedIn()" ng-controller="commentsController as comments">
+  <textarea id="commentWrite" ng-model="comments.currentStory.content"></textarea>
+</section>
+  <!-- <button class="btn btn-primary">Comment here</button> -->
 
-  <div ng-hide="main.hasSetUsername">
-    <form ng-submit="main.setUsername()">
-      <div class="form-group">
-        <input ng-model="main.username" class="form-control" placeholder="Username">
-      </div>
-
-  <button class="btn btn-primary">Comment here</button>
-  </form>
-  </div>
-
-  <div ng-show="main.hasSetUsername">
+  <!-- <div ng-show="main.hasSetUsername">
     <div id="message-panel">
       <ul>
         <li ng-repeat="message in main.messages track by $index" ng-class="{ me: message.username === main.username }">
@@ -36,6 +30,4 @@
     </div>
 
     <button class="btn btn-primary">Send</button>
-
-  </form>
-</div>      
+ -->    

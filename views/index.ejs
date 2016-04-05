@@ -12,6 +12,7 @@
   <script src="/js/app.js"></script>
   <script src="/js/models/Author.js"></script>
   <script src="/js/models/Story.js"></script>
+  <script src="/js/models/Comment.js"></script>
   <script src="/js/controllers/authors.js"></script>
   <script src="/js/controllers/stories.js"></script>
   <script src="/js/controllers/comments.js"></script>
@@ -30,6 +31,7 @@
       <a ng-if="!authors.isLoggedIn()" href="#register">Register</a>
       <a ng-if="authors.isLoggedIn()" ui-sref-active="active" ui-sref="authorprofile">My Profile</a>
       <a ng-if="authors.isLoggedIn()" ng-click="authors.logout()">Log Out</a>
+      <a ng-if="!authors.isLoggedIn()" ui-sref="storyIndex">Browse Stories</a>
     </nav>
   </header>
 
