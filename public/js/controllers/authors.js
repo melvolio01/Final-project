@@ -34,7 +34,7 @@ function AuthorsController(Author, tokenService, $state) {
     self.all = [];
     self.currentAuthor = null;
     self.message = "";
-    $state.go('login');
+    $state.go('home');
   }
 
   self.getAuthors = function(){

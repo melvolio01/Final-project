@@ -12,6 +12,7 @@ body{
 
 #storyShow{
   width: 45vw;
+  padding: 5px 5px 5px 5px;
 }
 
 #storyWrite{
@@ -55,6 +56,7 @@ body{
   width: 50vw;
   background-color: white;
   border: 1px solid #c7b89e;
+  padding: 5px 5px 5px 5px;
 }
 
 ul{
