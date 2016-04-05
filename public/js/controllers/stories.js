@@ -44,7 +44,10 @@ function StoriesController($window, $scope, $state, Story, $interval, $rootScope
       authorId: authorId
     }
     Story.save(data, function(story) {
-      console.log("saving: " + story)
+      $scope.stories.push(story);
+      console.log("saving: " + story);
+      $state.go('authorprofile');
+      // Get stories auto-adding here!
     })
   }
 

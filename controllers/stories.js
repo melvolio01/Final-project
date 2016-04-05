@@ -13,6 +13,7 @@ function storiesCreate(req, res){
 
   Story.create(req.body.story, function(err, story){
     if(err) return res.status(500).json({message: err}) && console.log(err);
+    
     Author.findByIdAndUpdate({_id: authorId}, {$push: {"stories": story}}, function(err, author) {
       if(err) return res.status(500).json({message: err}) && console.log(err);
       return res.status(201).json({author: author});

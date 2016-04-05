@@ -2,9 +2,9 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
 
 var authorSchema = mongoose.Schema({
-  username: {type: String, unique: true, required: true},
-  email: {type: String, unique: true, required: true},
-  passwordHash: {type: String, required: true},
+  username: {type: String, unique: true},
+  email: {type: String, unique: true},
+  passwordHash: {type: String},
   // other bits needed for author model here
   avatar: String,
   bio: String,
