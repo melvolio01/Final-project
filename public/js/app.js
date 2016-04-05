@@ -35,20 +35,24 @@ function Router($stateProvider, $urlRouterProvider){
     templateUrl: 'authorprofile.html'
   })
   .state('storyNew', {
-    url: '/storyNew', 
-    templateUrl: 'storyNew.html'
+    url: '/stories/new', 
+    templateUrl: 'storyNew.html',
+    controller: "StoriesController as stories"
   })
   .state('storyEdit', {
-    url: '/story/:Id', 
-    templateUrl: 'storyEdit.html'
+    url: '/story/:id/edit', 
+    templateUrl: 'storyEdit.html',
+    controller: "StoriesController as stories"
   })
-  .state('storyShow', {
-    url: '/story/show/:Id', 
-    templateUrl: 'storyShow.html'
+  .state('story', {
+    url: '/stories/:id', 
+    templateUrl: 'storyShow.html',
+    controller: "StoriesController as stories"
   })
   .state('storyIndex', {
-    url: '/storyIndex',
-    templateUrl: 'storyIndex.html'
+    url: '/stories',
+    templateUrl: 'storyIndex.html',
+    controller: "StoriesController as stories"
   });
 
   $urlRouterProvider.otherwise('/');

@@ -1,17 +1,6 @@
-<h1>Edit story</h1>
+<section>
+  <h1>{{ stories.currentStory.title }}</h1>
 
-<textarea id="storyWrite" ng-show="story in authors.currentAuthor.stories"  
-  ng-model="string"
-  [name="string"]
-  [required="string"]
-  [ng-required="string"]
-  [ng-minlength="number"]
-  [ng-maxlength="number"]
-  [ng-pattern="string"]
-  [ng-change="string"]
-  [ng-trim="boolean"]>
-  
-</textarea>
+  <textarea id="storyWrite" ng-model="stories.currentStory.content"></textarea>
 
-<div>Next update:<div id="clock"></div></div>
-
+</section>

@@ -20,7 +20,7 @@
   </div>
 
   <ul>
-    <li class="myStories" ng-repeat="story in authors.currentAuthor.stories">Title: {{ story.title }}   <br>  Genre: {{ story.genre }}<a ui-sref-active="active" ui-sref="storyEdit" id="storyEdit">Edit Story</a>
+    <li class="myStories" ng-repeat="story in authors.currentAuthor.stories">Title: {{ story.title }}   <br>  Genre: {{ story.genre }}<a ui-sref-active="active" ui-sref="storyEdit({ id: story._id })" id="{{ story._id }}">Edit Story</a>
 </li>
   </ul>
 </section>
