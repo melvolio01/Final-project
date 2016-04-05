@@ -20,7 +20,8 @@ function secureRoute(req, res, next){
 }
 
 router.route('/stories')
-  .get(storiesController.index);
+  .get(storiesController.index)
+  .post(storiesController.create);
 
 router.route('/stories/:id')
   // .all(secureRoute)

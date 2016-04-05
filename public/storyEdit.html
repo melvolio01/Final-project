@@ -1,6 +1,15 @@
 <section>
   <h1>{{ stories.currentStory.title }}</h1>
 
+  <textarea id="storyTitle" ng-model="stories.currentStory.title"></textarea><br>
   <textarea id="storyWrite" ng-model="stories.currentStory.content"></textarea>
-
+  <br>
+  <button ng-click="story in stories.deletecurrentStory">Delete</button>
 </section>
+<section>
+  <h3>Comments</h3>
+    <ul>
+      <li class="commentBar" ng-repeat="story in stories.currentStory">{{ story.comments.content }}<a ui-sref-active="active" ui-sref="story({ id: story._id })"></a>
+      </li>
+
+    </ul>

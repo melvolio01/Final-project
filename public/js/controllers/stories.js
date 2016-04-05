@@ -1,8 +1,8 @@
 angular.module('final_project')
   .controller('StoriesController', StoriesController);
 
-StoriesController.$inject = ['$window', '$scope', '$state', 'Story', '$interval', '$rootScope'];
-function StoriesController($window, $scope, $state, Story, $interval, $rootScope) {
+StoriesController.$inject = ['$window', '$scope', '$state', 'Story', '$interval', '$rootScope','tokenService'];
+function StoriesController($window, $scope, $state, Story, $interval, $rootScope, tokenService) {
 
   // var socket = $window.io();
 
@@ -12,6 +12,8 @@ function StoriesController($window, $scope, $state, Story, $interval, $rootScope
   self.message = null;
   self.username = "";
   self.hasSetUsername = false;
+
+  self.currentStory = {};
 
   self.all = Story.query();
 
@@ -33,6 +35,19 @@ function StoriesController($window, $scope, $state, Story, $interval, $rootScope
 
   //   self.message = null;
   // }
+
+  self.addStory = function() {
+    var authorId = tokenService.getAuthor()._id;
+    console.log(authorId);
+    var data = {
+      story: self.currentStory,
+      authorId: authorId
+    }
+    Story.save(data, function(story) {
+      console.log("saving: " + story)
+    })
+  }
+
 
   $rootScope.$on('$stateChangeStart', function() {
     $interval.cancel(self.timer);

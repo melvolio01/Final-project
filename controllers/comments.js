@@ -11,9 +11,9 @@ function commentsIndex(req, res){
 
 function commentsCreate(req, res){
   Comment.create(req.body.comment,
-    function(err, channel){
+    function(err, comment){
       if(err) return res.status(500).json({message: err});
-      if(!channel) return res.status(400).json({message: "Invalid data"});
+      if(!comment) return res.status(400).json({message: "Invalid data"});
       return res.status(201).json({
         comment: comment});
     });

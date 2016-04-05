@@ -2,7 +2,7 @@
   <h1>All stories</h1>
   <h2>{{ story.currentStory.title }}</h2>
   <ul>
-    <li class="myStories" ng-repeat="story in stories.all">{{ story.title }}<a ui-sref-active="active" ui-sref="story({ id: story._id })">View Story</a>
+    <li class="myStories" ng-repeat="story in stories.all">{{ story.title }}, {{ story.genre}}<a ui-sref-active="active" ui-sref="story({ id: story._id })">View Story</a>
     </li>
   </ul>
 </section>

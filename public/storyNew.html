@@ -1,6 +1,13 @@
-<h2>New story</h2>
+<section ng-controller="StoriesController as stories">
+  <h2>New story</h2>
 
-<textarea id="storyWrite" placeholder="...">
-</textarea>
-<br>
-<a ng-if="authors.isLoggedIn()" ui-sref-active="active" ui-sref="authorprofile">My Profile</a>
+  <form name="stories.newStory" ng-submit="stories.addStory()">
+    <textarea id="storyTitle" ng-model="stories.currentStory.title"></textarea><br>
+    <textarea id="storyWrite" ng-model="stories.currentStory.content"></textarea>
+    <input type="submit" value="Add">
+  </form>
+
+  <br>
+  <a ng-if="authors.isLoggedIn()" ui-sref-active="active" ui-sref="authorprofile">My Profile</a>
+</section>
+
