@@ -49,8 +49,9 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     opacity: 0.9;
+    padding-top: 10px;
 
 }
 
@@ -74,11 +75,6 @@ body{
   border: 1px solid #c7b89e;
   padding: 5px 5px 5px 5px;
 }
-
-.tabs{
-  padding: 5px 5px 5px 5px;
-}
-
 
 ul{
   list-style-type: none;

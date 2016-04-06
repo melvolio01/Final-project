@@ -3,6 +3,7 @@
 <head>
   <title>Flash fiction</title>
 
+
   <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
   <script src="/vendor/angular/angular.min.js"></script>
   <script src="/vendor/angular-resource/angular-resource.min.js"></script>
@@ -39,9 +40,15 @@
       <a ng-if="!authors.isLoggedIn()" ui-sref="storyIndex">Browse Stories</a>
     </nav>
   </header>
-
   <main ui-view class="container">
   </main>
+<section id="home" ng-if="!authors.isLoggedIn()">
+  <div id="home">
+  <IMG id="home" ng-src="../images/sepiaTypewriter.jpg">
+  </IMG>
+  </div>
+</section>
+  
 
 </body>
 </html>
