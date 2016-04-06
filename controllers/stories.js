@@ -12,20 +12,20 @@ function storiesCreate(req, res){
   var authorId = req.body.authorId;
 
   Story.create(req.body.story, function(err, story){
-    if(err) return res.status(500).json({message: err}) && console.log(err);
+    if(err) return res.status(500).json({message: err});
     
     Author.findByIdAndUpdate({_id: authorId}, {$push: {"stories": story}}, function(err, author) {
-      if(err) return res.status(500).json({message: err}) && console.log(err);
-      return res.status(201).json({author: author});
+      if(err) return res.status(500).json({message: err});
+      return res.status(201).json(story);
     });
   });
 
 }
 
 function storiesShow(req, res){
-  Story.findById(req.params.id).populate('comments').exec(function(err, Story){
+  Story.findById(req.params.id).populate('comments').exec(function(err, story){
     if(err) return res.status(500).json({ message: err });
-    return res.status(200).json(Story);
+    return res.status(200).json(story);
   });
 }
 

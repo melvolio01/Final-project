@@ -48,6 +48,12 @@ function AuthorsController(Author, tokenService, $state, $scope) {
     return !! tokenService.getToken();
   }
 
+  self.deleteAuthor = function() {
+    Author.delete({ id: self.currentAuthor._id }, function(res) {
+      self.logout();
+    });
+  }
+
   if(self.isLoggedIn()) {
     self.currentAuthor = Author.get({ id: tokenService.getAuthor()._id });
     return self;

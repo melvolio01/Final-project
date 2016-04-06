@@ -18,15 +18,17 @@ function StoriesController($window, $scope, $state, Story, Comment, $interval, $
 
   self.all = Story.query();
 
+  self.newComment = {};
+
   self.setUsername = function(){
     if(self.username.length > 2) self.hasSetUsername = true;
   }
 
   self.addComment = function() {
-    this.newComment.story = this.currentStory._id;
-    Comment.save(this.newComment, function(res) {
+    this.newComment.storyId = this.currentStory._id;
+    Comment.save(this.newComment, function(comment) {
       $scope.$applyAsync(function() {
-        self.currentStory.comments.push(res.comment);
+        self.currentStory.comments.push(comment);
       });
     });
   }

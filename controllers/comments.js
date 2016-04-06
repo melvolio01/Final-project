@@ -1,37 +1,38 @@
 var Comment = require('../models/Comment');
+var Story = require('../models/Story');
 
 function commentsIndex(req, res){
   Comment.find(function(err, comments){
     if(err) return res.status(500).json({message: err});
-    return res.status(200).json({
-      comments: comments
-    });
+    return res.status(200).json(comments);
   });
 }
 
 function commentsCreate(req, res){
-  Comment.create(req.body.comment,
-    function(err, comment){
+  Comment.create(req.body, function(err, comment){
+    if(err) return res.status(500).json({message: err});
+
+    Story.findByIdAndUpdate(req.body.storyId, { $push: { comments: comment._id } }, { new: true }, function(err, story) {
       if(err) return res.status(500).json({message: err});
-      if(!comment) return res.status(400).json({message: "Invalid data"});
-      return res.status(201).json({
-        comment: comment});
+
+      console.log(story);
+      return res.status(201).json(comment);
     });
+  });
 }
 
 function commentsShow(req, res){
   Comment.findById(req.params.id, function(err, comment){
     if(err) return res.status(500).json({message: err});
-    return res.status(200).json({
-      comment: comment});
+    return res.status(200).json(comment);
   });
 }
 
 function commentsUpdate(req, res){
-  Comment.findByIdAndUpdate(req.params.id, req.body.comment, {
+  Comment.findByIdAndUpdate(req.params.id, req.body, {
     new: true}, function(err, comment){
       if(err) return res.status(500).json({message: err});
-      return res.status(200).json({comment: comment});
+      return res.status(200).json(comment);
   });
 }
 

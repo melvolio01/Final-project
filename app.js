@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
 
-app.use(router);
+app.use('/', router);
 
 io.on('connect', function(socket){
   console.log("Socket connected");

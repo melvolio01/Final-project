@@ -20,8 +20,8 @@
     <ul id="userStories" ng-controller="StoriesController as stories">
       <li class="myStories" ng-repeat="story in authors.currentAuthor.stories | orderBy: '-_id'" id="{{story._id}}">
        
-        Title: {{ story.title }}<br>
-        Genre: {{ story.genre }}<a ui-sref-active="active" ui-sref="storyEdit({ id: story._id })" id="{{ story._id }}">Edit </a>  | 
+        Title: {{ story.title }}  <br>
+        Genre: {{ story.genre }}  <a ui-sref-active="active" ui-sref="storyEdit({ id: story._id })" id="{{ story._id }}">Edit </a>  | 
         <a ng-click="stories.deleteStory(story)">Delete</a>
   
           <!-- <span ng-if="checked" class="animate-if">
@@ -30,4 +30,6 @@
      </li>
     </ul>
   </div>
+  <div><a ng-click="authors.deleteAuthor()">Remove your profile</div>
+
 </section>
