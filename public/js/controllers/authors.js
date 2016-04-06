@@ -2,18 +2,21 @@ angular
   .module('final_project')
   .controller('authorsController', AuthorsController)
 
-AuthorsController.$inject = ['Author', 'tokenService', '$state'];
-function AuthorsController(Author, tokenService, $state) {
+AuthorsController.$inject = ['Author', 'tokenService', '$state', '$scope'];
+function AuthorsController(Author, tokenService, $state, $scope) {
   var self = this;
 
   self.all = [];
   self.currentAuthor = tokenService.getAuthor();
 
+  $scope.$on('newStory', function() {
+    self.currentAuthor = Author.get({ id: tokenService.getAuthor()._id });
+  });
+
   function handleLogin(res){
     var token = res.token ? res.token : null;
 
     if(token) {
-      self.getAuthors();
       self.currentAuthor = Author.get({ id: tokenService.getAuthor()._id });
       $state.go('authorprofile');
     }
@@ -46,7 +49,6 @@ function AuthorsController(Author, tokenService, $state) {
   }
 
   if(self.isLoggedIn()) {
-    self.getAuthors();
     self.currentAuthor = Author.get({ id: tokenService.getAuthor()._id });
     return self;
   }

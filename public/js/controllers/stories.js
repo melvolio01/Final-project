@@ -60,17 +60,11 @@ function StoriesController($window, $scope, $state, Story, Comment, $interval, $
     Story.save(data, function(story) {
       self.newStory = story;
       self.all.push(story);
-      self.currentAuthor = Author.get({ id: tokenService.getAuthor()._id });
-      console.log(self.currentAuthor.$promise);
-      self.currentAuthor.$promise.then(function(user) {
-        user.stories.push(story);
-        console.log("saving: " + story);
-        $state.go('storyIndex');
-      });
-    })
+
+      $rootScope.$broadcast('newStory');
+      $state.go('authorprofile', { id: tokenService.getAuthor()._id });
+    });
   }
-
-
 
 
   $rootScope.$on('$stateChangeStart', function() {
