@@ -68,6 +68,8 @@ function StoriesController($window, $scope, $state, Story, Comment, $interval, $
       $rootScope.$broadcast('newStory');
       $state.go('authorprofile', { id: tokenService.getAuthor()._id });
     });
+      // $rootScope.$broadcast('editStory');
+      // $state.go('authorprofile', { id: tokenService.getAuthor()._id});
   }
 
 

@@ -2,6 +2,8 @@ body{
   background-color: #e0e0e0;
   color: #4D1D0D;
   font-family: 'Roboto', sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #storyRead{
@@ -38,6 +40,20 @@ body{
 
 }
 
+.container{
+  width: 100vw;
+}
+
+#home{
+    background-color: #e0e0e0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    opacity: 0.8;
+
+}
+
 /*#storyEdit{
   margin-left: 30vw;
 }*/
@@ -58,6 +74,11 @@ body{
   border: 1px solid #c7b89e;
   padding: 5px 5px 5px 5px;
 }
+
+.tabs{
+  padding: 5px 5px 5px 5px;
+}
+
 
 ul{
   list-style-type: none;
