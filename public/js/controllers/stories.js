@@ -22,10 +22,6 @@ function StoriesController($window, $scope, $state, Story, Comment, $interval, $
     if(self.username.length > 2) self.hasSetUsername = true;
   }
 
-  self.deleteCurrentStory = function() {
-
-  }
-
   self.addComment = function() {
     this.newComment.story = this.currentStory._id;
     Comment.save(this.newComment, function(res) {
@@ -33,6 +29,14 @@ function StoriesController($window, $scope, $state, Story, Comment, $interval, $
         self.currentStory.comments.push(res.comment);
       });
     });
+  }
+
+  self.deleteStory = function(story) {
+    Story.delete({id: story._id}, function() {
+      console.log("deleted!");
+      var li = document.getElementById(story._id);
+      li.parentNode.removeChild(li);
+    })
   }
 
   self.timer;

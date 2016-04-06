@@ -55,5 +55,7 @@ function AuthorsController(Author, tokenService, $state, $scope) {
 
   self.getAuthors();
 
+
+
   return self;
 }

@@ -43,6 +43,7 @@ function storiesDelete(req, res){
   });
 }
 
+
 module.exports = {
   index: storiesIndex,
   show: storiesShow,
