@@ -1,7 +1,7 @@
 <h2>Hello {{ authors.currentAuthor.username }}</h2>
-  <div id="bio"><h3>{{authors.currentAuthor.bio}}</h3></div>
+  
       <div class="message">
-        <h4>{{ authors.message }}</h4>
+        <!-- <h4>{{ authors.message }}</h4> -->
       </div>
 
 <!-- <section> -->
@@ -9,6 +9,9 @@
     <div class="card">
       <img class="avatar-frame" ng-src="{{authors.currentAuthor.avatar}}" alt="Card image cap">
     </div>
+
+    <div id="bio"><h4>{{authors.currentAuthor.bio}}</h4></div>
+
     <nav class="tabs">
       <a ui-sref-active="active" ui-sref="storyNew">New Story</a>
       <a ui-sref-active="active" ui-sref="storyIndex">Browse Stories</a>
@@ -21,11 +24,14 @@
        
         Title: {{ story.title }}  <br>
         Genre: {{ story.genre }}  <a ui-sref-active="active" ui-sref="storyEdit({ id: story._id })" id="{{ story._id }}">Edit Story </a>  | 
-        <a class="danger" ng-click="stories.deleteStory(story)">Delete Story</a>
+        <a ng-click="stories.deleteStory(story)">Delete</a>
 
      </li>
     </ul>
   </div>
-  <a class="danger" ng-click="authors.deleteAuthor()">Remove your profile</a>
+  
+  <div class="deleteProfile">
+    <a class="deleteProfile" ng-click="authors.deleteAuthor()">Delete your profile</a>
+  </div>
 <!-- </section>
  -->
