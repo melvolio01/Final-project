@@ -37,7 +37,7 @@ Story.create([{
   comments: [comments[0]._id, comments[1]._id]
   },{
   title: "Story 2",
-  genre: "noir",
+  genre: "thriller",
   content: "Different lorem.",
   comments: [comments[6]._id, comments[7]._id]
   },{

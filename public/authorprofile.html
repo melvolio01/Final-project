@@ -5,7 +5,7 @@
 <section>
   <div class="container col-md-4">
     <div class="card">
-      <img class="avatar-frame" ng-src="{{ avatar-frame ? authors.currentAuthor.avatar : '../images/Shaky.jpg'}}" alt="Card image cap">
+      <img class="avatar-frame" ng-src="{{authors.currentAuthor.avatar}}" alt="Card image cap">
     </div>
     <nav class="tabs">
       <a ui-sref-active="active" ui-sref="storyNew">New Story</a>
@@ -20,8 +20,8 @@
       <li class="myStories" ng-repeat="story in authors.currentAuthor.stories | orderBy: '-_id'" id="{{story._id}}">
        
         Title: {{ story.title }}  <br>
-        Genre: {{ story.genre }}  <a ui-sref-active="active" ui-sref="storyEdit({ id: story._id })" id="{{ story._id }}">Edit </a>  | 
-        <a ng-click="stories.deleteStory(story)">Delete</a>
+        Genre: {{ story.genre }}  <a ui-sref-active="active" ui-sref="storyEdit({ id: story._id })" id="{{ story._id }}">Edit Story </a>  | 
+        <a ng-click="stories.deleteStory(story)">Delete Story</a>
 
      </li>
     </ul>

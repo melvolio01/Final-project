@@ -6,7 +6,7 @@ var authorSchema = mongoose.Schema({
   email: {type: String, unique: true},
   passwordHash: {type: String},
   // other bits needed for author model here
-  avatar: String,
+  avatar: { type: String, default: "../images/Shaky.jpg" },
   bio: String,
   stories: [{ type: mongoose.Schema.ObjectId, ref: 'Story'}],
   comments: [{ type: mongoose.Schema.ObjectId, ref: 'Comment'}]
