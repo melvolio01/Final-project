@@ -69,6 +69,13 @@ Author.create([{
   password: "password",
   passwordConfirmation: "password",
   stories: [stories[2]._id, stories[3]._id]
+  },{
+  username: "Dottie",
+  email: "dottie@ga.co",
+  bio: "The ones I like … are 'cheque' and 'enclosed.'",
+  avatar: "http://www.dorothyparker.com/images/dottie.JPG",
+  password: "password",
+  passwordConfirmation: "password"
   }]).then(function(authors, err){
     if(err) console.error(err);
     console.log(authors);

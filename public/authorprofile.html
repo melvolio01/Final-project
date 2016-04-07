@@ -1,8 +1,8 @@
 <h2>Hello {{ authors.currentAuthor.username }}</h2>
-  
-      <div class="message">
-        <!-- <h4>{{ authors.message }}</h4> -->
-      </div>
+<div id="bio"><h4>{{authors.currentAuthor.bio}}</h4></div>  
+      <!-- <div class="message">
+        <h4>{{ authors.message }}</h4>
+      </div> -->
 
 <!-- <section> -->
   <div class="container col-md-4">
@@ -10,7 +10,7 @@
       <img class="avatar-frame" ng-src="{{authors.currentAuthor.avatar}}" alt="Card image cap">
     </div>
 
-    <div id="bio"><h4>{{authors.currentAuthor.bio}}</h4></div>
+    
 
     <nav class="tabs">
       <a ui-sref-active="active" ui-sref="storyNew">New Story</a>
