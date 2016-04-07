@@ -37,7 +37,7 @@ function AuthorsController(Author, tokenService, $state, $scope) {
     self.all = [];
     self.currentAuthor = null;
     self.message = "";
-    $state.go('home');
+    $state.go('login');
   }
 
   self.getAuthors = function(){
