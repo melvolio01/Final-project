@@ -48,7 +48,7 @@ body{
   border: 1px solid #c7b89e;
   text-align: left;
   -webkit-padding-start: 0;
-
+  padding: 3px 3px 3px 3px;
 }
 
 .container{

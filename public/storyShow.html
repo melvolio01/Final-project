@@ -8,7 +8,7 @@
 <section>
   <h3>Comments</h3>
   <ul>
-    <li id="commentBar" ng-repeat="comment in stories.currentStory.comments">{{ comment.content }}</li>
+    <li id="commentBar" ng-repeat="comment in stories.currentStory.comments">Author: {{ comment.author.username}} <br>Comment: {{ comment.content }}</li>
   </ul>
 </section>
 
@@ -18,7 +18,7 @@
 <section ng-if="authors.isLoggedIn()">
 
   <form ng-submit="stories.addComment()">
-    <textarea id="commentWrite" ng-model="stories.newComment.content"></textarea>
+    <textarea id="commentWrite" placeholder="add comment" ng-model="stories.newComment.content"></textarea>
     <input type="submit" value="Add Comment">
   </form>
 
