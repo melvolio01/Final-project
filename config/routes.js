@@ -30,6 +30,7 @@ router.route('/stories/:id')
   .delete(secureRoute, storiesController.delete);
 
 router.route('/comments')
+  .all(secureRoute)
   .get(commentsController.index)
   .post(commentsController.create);
 

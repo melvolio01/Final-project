@@ -1,5 +1,3 @@
-// front end app.js
-// set up angular app
 angular
   .module('final_project', ['ui.router', 'ngResource', 'angular-jwt'])
   .constant('API', 'http://localhost:8000')

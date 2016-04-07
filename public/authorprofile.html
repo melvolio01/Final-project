@@ -22,10 +22,7 @@
         Title: {{ story.title }}  <br>
         Genre: {{ story.genre }}  <a ui-sref-active="active" ui-sref="storyEdit({ id: story._id })" id="{{ story._id }}">Edit </a>  | 
         <a ng-click="stories.deleteStory(story)">Delete</a>
-  
-          <!-- <span ng-if="checked" class="animate-if">
-            This is removed when the checkbox is unchecked.
-          </span>     -->
+
      </li>
     </ul>
   </div>

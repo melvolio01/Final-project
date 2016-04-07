@@ -22,11 +22,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="/css/app.css">
 </head>
-<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-
-<div class="modalContainer" 
-  ng-style="{'background-image':'url(https://www.google.com/images/srpr/logo4w.png)'}"></div>
-
 
 <body ng-app="final_project" ng-controller="authorsController as authors">
   <header>
@@ -39,9 +34,13 @@
       <a ng-if="authors.isLoggedIn()" ng-click="authors.logout()">Log Out</a>
       <a ng-if="!authors.isLoggedIn()" ui-sref="storyIndex">Browse Stories</a>
     </nav>
+     <div class="message">
+      {{ authors.message }}
+    </div>
   </header>
   <main ui-view class="container">
   </main>
+
 <section id="home" ng-if="!authors.isLoggedIn()">
   <div id="home">
   <IMG id="home" ng-src="../images/sepiaTypewriter.jpg">

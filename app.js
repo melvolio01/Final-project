@@ -1,5 +1,3 @@
-// backend app.js
-// set up express API
 var express        = require('express');
 var app            = express();
 var expressLayouts = require('express-ejs-layouts');
