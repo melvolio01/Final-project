@@ -1,21 +1,26 @@
 <section id="register">
       <form ng-submit="authors.register()" novalidate>
         <label for="username">Username</label>
-        <input type="text" name="username" placeholder="Username" ng-model="authors.currentAuthor.username">
+        <input type="text" id="formField" name="username" placeholder="Username" ng-model="authors.currentAuthor.username">
         
         <label for="email">Email</label>
-        <input type="email" name="email" placeholder="E-mail" ng-model="authors.currentAuthor.email">
+        <input type="email" id="formField" name="email" placeholder="E-mail" ng-model="authors.currentAuthor.email">
         
         <label for="password">Password</label>
-        <input type="password" name="password" placeholder="Password" ng-model="authors.currentAuthor.password">
+        <input type="password" id="formField" name="password" placeholder="Password" ng-model="authors.currentAuthor.password">
         
         <label for="passwordConfirmation">
         Password Confirmation</label>
-        <input type="password" name="passwordConfirmation"
+        <input type="password" id="formField" name="passwordConfirmation"
         placeholder="Re-enter password" ng-model="authors.currentAuthor.passwordConfirmation">
 
-         <textarea placeholder="your bio" ng-model="authors.currentAuthor.bio"></textarea>
-        <!-- <textarea id="storyWrite" placeholder="content" ng-model="stories.currentStory.content"></textarea> -->
+        <label for="bio">
+        Tagline:</label>
+        <input type="text" id="formField" name="bio"
+        placeholder="Your tagline" ng-model="authors.currentAuthor.bio">
+
+        <!--  <textarea placeholder="Your tagline" ng-model="authors.currentAuthor.bio"></textarea>
+        <textarea id="storyWrite" placeholder="content" ng-model="stories.currentStory.content"></textarea> -->
 
         <input type="submit" value="Register">
       </form>

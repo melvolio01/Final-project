@@ -36,6 +36,7 @@ function StoriesController($window, $scope, $state, Story, Comment, $interval, $
   self.deleteStory = function(story) {
     Story.delete({id: story._id}, function() {
       console.log("deleted!");
+      
       var li = document.getElementById(story._id);
       li.parentNode.removeChild(li);
     })

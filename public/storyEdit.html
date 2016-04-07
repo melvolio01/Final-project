@@ -1,8 +1,17 @@
 <section>
 
-  <textarea id="storyTitle" ng-model="stories.currentStory.title"></textarea><br>
-  <textarea id="storyWrite" ng-model="stories.currentStory.content"></textarea>
-  <br>
+  <select id="select" class="stories" placeholder="genre" ng-model="stories.currentStory.genre">
+    <option value="comedy">Comedy</option>
+    <option value="tragedy">Tragedy</option>
+    <option value="thriller">Thriller</option>
+    <option value="crime">Crime</option>
+    <option value="romance">Romance</option>
+    <option value="non-fiction">Non-fiction</option>
+  </select>
+
+  <textarea id="storyTitle" class="stories"ng-model="stories.currentStory.title"></textarea>
+
+  <textarea id="storyWrite" class="stories" ng-model="stories.currentStory.content"></textarea>
 </section>
 <section>
   <h3>Comments</h3>

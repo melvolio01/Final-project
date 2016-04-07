@@ -1,10 +1,10 @@
-<section id="login">
+<section >
       <form ng-submit="authors.login()" novalidate>
         <label for="email" class="control-label">Email</label>
-        <input type="text" name="email" placeholder="Email" ng-model="authors.currentAuthor.email">
+        <input type="text" id="formField" name="email" placeholder="Email" ng-model="authors.currentAuthor.email">
 
         <label for="password" class="control-label">Password</label>
-        <input type="password" name="password" placeholder="Password" ng-model="authors.currentAuthor.password">
+        <input type="password" id="formField" name="password" placeholder="Password" ng-model="authors.currentAuthor.password">
 
         <input type="submit" value="Login">
       </form>

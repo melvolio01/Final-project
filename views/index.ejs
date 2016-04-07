@@ -34,9 +34,6 @@
       <a ng-if="authors.isLoggedIn()" ng-click="authors.logout()">Log Out</a>
       <a ng-if="!authors.isLoggedIn()" ui-sref="storyIndex">Browse Stories</a>
     </nav>
-     <div class="message">
-      {{ authors.message }}
-    </div>
   </header>
   <main ui-view class="container">
   </main>

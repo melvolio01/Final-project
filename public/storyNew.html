@@ -2,8 +2,20 @@
   <h2>New story</h2>
 
   <form name="stories.newStory" ng-submit="stories.addStory()">
-    <textarea id="storyTitle" placeholder="title" ng-model="stories.currentStory.title"></textarea><br>
-    <textarea id="storyWrite" placeholder="content" ng-model="stories.currentStory.content"></textarea>
+
+    <select id="select" class="stories" placeholder="genre" ng-model="stories.currentStory.genre">
+      <option value="comedy">Comedy</option>
+      <option value="tragedy">Tragedy</option>
+      <option value="thriller">Thriller</option>
+      <option value="crime">Crime</option>
+      <option value="romance">Romance</option>
+      <option value="non-fiction">Non-fiction</option>
+    </select>
+
+    <textarea id="storyTitle" class="stories" placeholder="title" ng-model="stories.currentStory.title"></textarea>
+  
+    <textarea id="storyWrite" class="stories" placeholder="content" ng-model="stories.currentStory.content"></textarea>
+   
     <br>
     <input type="submit" value="Add First Draft">
   </form>

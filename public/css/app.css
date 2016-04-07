@@ -6,6 +6,11 @@ body{
   background-size: cover;
 }
 
+.stories{
+  display: block;
+  margin: 5px 5px 5px 5px;
+}
+
 #storyRead{
   height: 70vh;
   width: 50vw;
@@ -19,13 +24,19 @@ body{
 
 #storyWrite{
   height: 70vh;
-  width: 70vh;
+  width: 70vw;
   border: 1px solid #c7b89e;
 }
 #storyTitle{
   min-height: 20px;
   width: 35vw;
   border: 1px solid #c7b89e;
+}
+
+#select{
+  height: 30px;
+  width: 35vw;
+  background-color: white;
 }
 
 #commentBar{
@@ -74,6 +85,11 @@ body{
   background-color: white;
   border: 1px solid #c7b89e;
   padding: 5px 5px 5px 5px;
+}
+
+#formField{
+  display: block;
+  width: 40vw;
 }
 
 ul{
