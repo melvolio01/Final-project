@@ -1,6 +1,8 @@
 <h2>Hello {{ authors.currentAuthor.username }}</h2>
-<h4>{{authors.currentAuthor.bio}}</h4>
-
+<h3>{{authors.currentAuthor.bio}}</h3>
+  <div class="message">
+      <h4>{{ authors.message }}</h4>
+    </div>
 
 <section>
   <div class="container col-md-4">
@@ -12,9 +14,7 @@
       <a ui-sref-active="active" ui-sref="storyIndex">Browse Stories</a>
     </nav>
 
-    <div class="message">
-      {{ authors.message }}
-    </div>
+    
 
     <ul id="userStories" ng-controller="StoriesController as stories">
       <li class="myStories" ng-repeat="story in authors.currentAuthor.stories | orderBy: '-_id'" id="{{story._id}}">

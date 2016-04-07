@@ -59,16 +59,16 @@ body{
     background-color: #e0e0e0;
     background-size: cover;
     background-repeat: no-repeat;
+    border-top: 3px solid #4D1D0D;
     height: 100vh;
     width: 100vw;
     opacity: 0.9;
-    padding-top: 10px;
 
 }
 
-/*#storyEdit{
-  margin-left: 30vw;
-}*/
+.tabs{
+  padding-bottom: 10px;
+}
 
 #commentWrite{
   height: 30px;
@@ -84,7 +84,7 @@ body{
   width: 50vw;
   background-color: white;
   border: 1px solid #c7b89e;
-  padding: 5px 5px 5px 5px;
+  padding: 5px 5px 10px 5px;
 }
 
 #formField{
@@ -95,6 +95,22 @@ body{
 ul{
   list-style-type: none;
   }
+
+li { 
+  cursor: pointer; cursor: hand; 
+}
+
+a{
+  cursor: pointer; cursor: hand;
+}
+
+#register{
+  padding-bottom: 10px;
+}
+
+#login{
+  padding-bottom: 10px;
+}
 
 .avatar-frame {border: 2px solid #c7b89e;
         width: 125px;

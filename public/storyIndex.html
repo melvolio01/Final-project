@@ -2,7 +2,7 @@
   <!-- <h1>All stories</h1> -->
   <br>
   <ul>
-    <li class="myStories" ng-repeat="story in stories.all | orderBy: '-_id'" id="{{story._id}}">Title: {{ story.title }}<br> Genre: {{ story.genre}}<br> Author: {{ story.author.username}}<a ui-sref-active="active" ui-sref="story({ id: story._id })">View Story</a>
+    <li class="myStories" ng-repeat="story in stories.all | orderBy: '-_id'" id="{{story._id}}">Title: {{ story.title }}<br> Genre: {{ story.genre}}<br> <a ui-sref-active="active" ui-sref="story({ id: story._id })">View Story</a>
     </li>
   </ul>
 </section>
