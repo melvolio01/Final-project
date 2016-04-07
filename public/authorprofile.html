@@ -4,7 +4,7 @@
         <h4>{{ authors.message }}</h4>
       </div>
 
-<section>
+<!-- <section> -->
   <div class="container col-md-4">
     <div class="card">
       <img class="avatar-frame" ng-src="{{authors.currentAuthor.avatar}}" alt="Card image cap">
@@ -21,11 +21,11 @@
        
         Title: {{ story.title }}  <br>
         Genre: {{ story.genre }}  <a ui-sref-active="active" ui-sref="storyEdit({ id: story._id })" id="{{ story._id }}">Edit Story </a>  | 
-        <a ng-click="stories.deleteStory(story)">Delete Story</a>
+        <a class="danger" ng-click="stories.deleteStory(story)">Delete Story</a>
 
      </li>
     </ul>
   </div>
-  <div><a ng-click="authors.deleteAuthor()">Remove your profile</div>
-
-</section>
+  <a class="danger" ng-click="authors.deleteAuthor()">Remove your profile</a>
+<!-- </section>
+ -->
