@@ -69,11 +69,27 @@ Author.create([{
   password: "password",
   passwordConfirmation: "password",
   stories: [stories[2]._id, stories[3]._id]
-  },{
+  },
+  {
   username: "Dottie",
   email: "dottie@ga.co",
   bio: "The ones I like … are 'cheque' and 'enclosed.'",
   avatar: "http://www.dorothyparker.com/images/dottie.JPG",
+  password: "password",
+  passwordConfirmation: "password"
+  },
+  {
+  username: "Bobby D",
+  email: "bob@ga.co",
+  bio: "Keep on keepin' on",
+  avatar: "http://images.mentalfloss.com/sites/default/files/BobDylanSmileyBuzz_6.jpg",
+  password: "password",
+  passwordConfirmation: "password"
+  },{
+  username: "Ernesto",
+  email: "ernie@ga.co",
+  bio: "Shootin' and fishin'",
+  avatar: "http://blogs.cofc.edu/engl-207-fall13/files/2014/03/Ernest-Hemingway-in-the-bath.jpg",
   password: "password",
   passwordConfirmation: "password"
   }]).then(function(authors, err){
