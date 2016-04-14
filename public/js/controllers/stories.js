@@ -89,7 +89,7 @@ function StoriesController($window, $scope, $state, Story, Comment, $interval, $
         self.timer = $interval(function() {
           Story.update(self.currentStory);
           console.log("story saved!");
-        }, 5000);
+        }, 1000);
       }
     });
   }
