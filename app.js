@@ -10,7 +10,7 @@ var router         = require('./config/routes');
 var server         = require('http').createServer(app);
 var db             = require('./config/database');
 var io             = require('socket.io')(server);
-var mongoUri =  process.env.MONGODB_URI || 'mongodb://localhost/final_project'
+var mongoUri =  process.env.MONGODB_URI || 'mongodb://localhost/3000';
 
 mongoose.connect(db.uri);
 
