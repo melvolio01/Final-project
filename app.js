@@ -14,10 +14,6 @@ mongoose.connect(db.uri);
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/final_project");
 
 
-2 new messages since 5:24 PM
-Files
-;
-
 // mongoose.connect(mongoose.connect(process.env.MONGODB_URI);
 
 app.set('views', 'views');
