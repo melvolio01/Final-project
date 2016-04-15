@@ -1,6 +1,5 @@
 var express        = require('express');
 var app            = express();
-var expressLayouts = require('express-ejs-layouts');
 var morgan         = require('morgan');
 var port           = process.env.PORT || 3000;
 var mongoose       = require('mongoose');
