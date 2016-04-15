@@ -8,7 +8,6 @@ var cors           = require('cors');
 var router         = require('./config/routes');
 var server         = require('http').createServer(app);
 var db             = require('./config/database');
-// var io             = require('socket.io')(server);
 var mongoUri =  process.env.MONGODB_URI || 'mongodb://localhost/3000';
 
 mongoose.connect(db.uri);
@@ -24,13 +23,6 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use('/', router);
-
-// io.on('connect', function(socket){
-//   console.log("Socket connected");
-//   socket.on('message', function(message){
-//     io.emit('message', message)
-//   });
-// });
 
 app.listen(port, function(){
   console.log("Express is listening on port " + port);
