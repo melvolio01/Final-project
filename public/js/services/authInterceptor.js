@@ -1,20 +1,20 @@
 angular.module('final_project')
   .factory('AuthInterceptor', AuthInterceptor);
 
-AuthInterceptor.$inject = ['API', 'tokenService'];
-function AuthInterceptor(API, tokenService){
+AuthInterceptor.$inject = ['tokenService'];
+function AuthInterceptor(tokenService){
   return{
     request: function(config){
       var token = tokenService.getToken();
 
-      if(!!config.url.match(API)&& !!token){
+      if(!!config.url.match && !!token){
         config.headers.Authorization = 'Bearer ' + token;
       }
 
       return config;
     },
     response: function(res){
-      if(!!res.config.url.match(API) && !! res.data.token){
+      if(!!res.config.url.match && !! res.data.token){
         tokenService.saveToken(res.data.token);
       }
       return res;
