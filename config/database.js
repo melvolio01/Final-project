@@ -1,3 +1,4 @@
 module.exports = {
-  uri: 'mongodb://localhost/final_project'
+  uri: process.env.MONGODB_URI  || 'mongodb://localhost/final_project'
+
 }
