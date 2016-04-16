@@ -1,5 +1,5 @@
 <section>
-  <h1>{{ stories.currentStory.title }}</h1>
+  <h4>{{ stories.currentStory.title }}</h4>
 
   <p id="storyShow">{{ stories.currentStory.content }}</p>
 
@@ -8,7 +8,7 @@
 <section>
   <p>Comments</p>
   <ul>
-    <li id="commentBar" ng-repeat="comment in stories.currentStory.comments">Comment: {{ comment.content }}</li>
+    <li id="commentBar" ng-repeat="comment in stories.currentStory.comments"><h6>Comment: {{ comment.content }}</h6></li>
   </ul>
 </section>
 
