@@ -14,8 +14,8 @@
   <textarea id="storyWrite" class="stories" ng-model="stories.currentStory.content"></textarea>
 </section>
 <section>
-  <p>Comments</p>
+  <h6>Comments</h6>
   <ul>
-    <li id="commentBar" ng-repeat="comment in stories.currentStory.comments">{{ comment.content }}</li>
+    <li id="commentBar" ng-repeat="comment in stories.currentStory.comments"><h6>{{ comment.content }}</h6></li>
   </ul>
 </section>
