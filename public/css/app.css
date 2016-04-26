@@ -13,8 +13,7 @@ body{
     border-top: 3px solid #4D1D0D;
     height: 100vh;
     width: 100vw;
-    opacity: 0.9;
-
+    -webkit-filter: grayscale(70%);   
 }
 
 .stories{
@@ -77,17 +76,38 @@ body{
 
 #bio{
   width: 100vw;
-  min-height: 0px;
-  color:#e0e0e0;
-  background-color:#4D1D0D;
-  opacity: 0.4;
-  padding-left: 5px;
-  border-radius: 10px;
-
+  color:#fff;
+  background-color:#AA3C39;
+  padding-left: 10px;
+  border-radius: 30px;
+  opacity: 0.7;
+  -webkit-filter: grayscale(40%);
+  font-size: 14px;
+  display: inline-block;
+  margin-top: 2vh;
 }
 
 .message-panel{
   width: 20vw}
+
+
+.userStories{
+  display: inline-block;
+  margin-top: 2vh;
+}
+
+.authorStories{
+  display: inline-block;
+}
+
+ul{
+  list-style-type: none;
+  }
+
+li { 
+  padding-bottom: 1vh;
+  
+}
 
 .myStories{
   min-height: 40px;
@@ -97,6 +117,8 @@ body{
   border-radius: 10px;
   padding: 5px 5px 10px 5px;
   opacity: 0.7;
+  display: inline-block;
+
 }
 
 #formField{
@@ -105,33 +127,40 @@ body{
   border-radius: 5px;
 }
 
-ul{
-  list-style-type: none;
-  }
-
-li { 
-  padding-bottom: 5px;
-}
 
 
-#register{
+#register, #login {
   padding-bottom: 10px;
 }
 
-#login{
-  padding-bottom: 10px;
+
+.polaroid {
+  position: relative;
+  width: 210px;
+  max-height: 255px;
+  -webkit-filter: sepia(30%);
+  margin-bottom: 1vh;
+
 }
 
-.avatar-frame {
-  border: 2px solid #c7b89e;
-  width: 125px;
-  height: 125px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  .polaroid img{
+    border: 10px solid #fff;
+    height: 200px;
+    width: 200px;
+    border-bottom: 45px solid #fff;
+      webkit-box-shadow: 3px 3px 3px #777;
+      moz-box-shadow: 3px 3px 3px #777;
+      box-shadow: 3px 3px 3px #777;
 }
 
-/*---- BUTTONS etc----*/
+  .polaroid p{
+     position: absolute;
+     text-align: center;
+     width: 100%;
+     bottom: 0px;
+     color: #888;
+}
+
 
 a, button, input{
   cursor: pointer; cursor: hand;
@@ -143,8 +172,8 @@ button, input[type=submit] {
   padding: 5px 10px;
   font-family: Incognitype;
   border-radius: 5px;
-  opacity: 0.7;
   margin-top: 10px;
+  -webkit-filter: grayscale(70%);
 }
 
 .neutral { background: #4D1D0D; }
@@ -165,24 +194,14 @@ a {
 
 
 .deleteProfile { 
-  background: #AA3C39;
-  border: none;
-  color: white;
-  padding: 3px 3px 3px 3px;
+  background: black;
+  border: 1px solid #AA3C39;
+  color: gold;
+  display: inline-block;
+  padding: 5px 5px 5px 5px;
   font-family: Incognitype;
-  width: 175px;
-  border-radius: 5px;
-  opacity: 0.6;
-  margin-top: 74vh;
- }
-
- #logout {
-  background: #AA3C39;
-  border: none;
-  color: #fff;
-  padding: 3px 3px 3px 3px;
-  font-family: Incognitype;
-  border-radius: 5px;
-  opacity: 0.7;
-  margin-top: 10px;
+  max-width: 175px;
+  /*margin-top: 5vh;*/
+  border-radius: 30px;
+  -webkit-filter: sepia(70%);
  }

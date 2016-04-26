@@ -1,37 +1,42 @@
-<h2>Hello {{ authors.currentAuthor.username }}</h2>
-<div id="bio"><h4>{{authors.currentAuthor.bio}}</h4></div>  
+
       <!-- <div class="message">
         <h4>{{ authors.message }}</h4>
       </div> -->
 
 <!-- <section> -->
+
   <div class="container col-md-4">
-    <div class="card">
-      <img class="avatar-frame" ng-src="{{authors.currentAuthor.avatar}}" alt="Card image cap">
-    </div>
+    <div class="profile">
+      <div class="polaroid">
+        <img class="avatar-frame" ng-src="{{authors.currentAuthor.avatar}}" alt="Card image cap"><p>Hi, {{ authors.currentAuthor.username }}</p>
 
-    
+      </div>
 
-    <nav class="tabs">
+   
+
+  <nav class="tabs">
       <a ui-sref-active="active" ui-sref="storyNew">New Story</a>
       <a ui-sref-active="active" ui-sref="storyIndex">Browse Stories</a>
     </nav>
 
-    
-
-    <ul id="userStories" ng-controller="StoriesController as stories">
-      <li class="myStories" ng-repeat="story in authors.currentAuthor.stories | orderBy: '-_id'" id="{{story._id}}">
-       
-        Title: {{ story.title }}  <br>
-        Genre: {{ story.genre }}  <a ui-sref-active="active" ui-sref="storyEdit({ id: story._id })" id="{{ story._id }}">Edit Story </a>  | 
-        <a ng-click="stories.deleteStory(story)">Delete</a>
-
-     </li>
-    </ul>
-  </div>
   
-  <div class="deleteProfile">
-    <a class="deleteProfile" ng-click="authors.deleteAuthor()">Delete your profile</a>
+
+
+
+
+      <div class="authorStories">
+        <ul class="userStories" ng-controller="StoriesController as stories">
+          <li class="myStories" ng-repeat="story in authors.currentAuthor.stories | orderBy: '-_id'" id="{{story._id}}">
+       
+          Title: {{ story.title }}  <br>
+          Genre: {{ story.genre }}  <a ui-sref-active="active" ui-sref="storyEdit({ id: story._id })" id="{{ story._id }}">Edit Story </a>  | 
+          <a ng-click="stories.deleteStory(story)">Delete</a>
+          </li>
+        </ul>
+      </div>
+
+        <a class="deleteProfile" ng-click="authors.deleteAuthor()">Delete  profile</a>
+        
+    </div>
   </div>
-<!-- </section>
- -->
+    
